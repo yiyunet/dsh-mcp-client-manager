@@ -1,7 +1,6 @@
 {
   "name": "@yiyunet/dsh-mcp-client-manager",
   "version": "1.0.4",
-  "private": true,
   "description": "在 设置 → 侧栏 提供「MCP 客户端」面板：列出/添加/改写/启停 @deepseek-ai/dsh-mcp-client 的 MCP 行；受管行写入自有层 $DSH_HOME/cordis.patch.yml，手写行走官方 configEditor/pluginManager 通道。零构建、零运行依赖。",
   "keywords": [
     "deepseek-harness",
@@ -16,6 +15,9 @@
     "url": "https://github.com/yiyunet"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yiyunet/dsh-mcp-client-manager.git"
@@ -37,6 +39,7 @@
     "locale",
     "docs",
     "assets",
+    "CONTEXT.md",
     "cordis.patch.yml",
     "LICENSE",
     "CHANGELOG.md",

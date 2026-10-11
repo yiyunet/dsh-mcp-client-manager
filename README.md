@@ -5,8 +5,8 @@
 DSH 插件：在 **设置 → 侧栏** 提供「**MCP 客户端**」面板，用来管理挂在 `@deepseek-ai/dsh-mcp-client`
 下的 MCP 服务器行 —— 列出 / 添加 / 改写 / 启停 / 删除，**点保存才写盘，写完不重启宿主**。
 
-> 本插件最初为**作者自用**而写（`package.json` 标 `private: true`，**未发布 npm**）。
-> 源码公开、MIT 许可，按需自取；能力边界与已知限制全部写在本文档里，**不承诺文档之外的行为**。
+> 本插件最初为**作者自用**而写；现已发布到 npm（[`@yiyunet/dsh-mcp-client-manager`](https://www.npmjs.com/package/@yiyunet/dsh-mcp-client-manager)），源码 MIT、按需自取。
+> 能力边界与已知限制全部写在本文档里，**不承诺文档之外的行为**。
 
 ## 变更历史
 
@@ -72,6 +72,8 @@ DSH 插件：在 **设置 → 侧栏** 提供「**MCP 客户端**」面板，用
 ---
 
 ## 3. 安装
+
+> **已发布 npm（最省事）**：`dsh plugin --profile web add @yiyunet/dsh-mcp-client-manager`；下列方式任选。
 
 **方式 A · 本地目录（推荐：你手上这份 clone / 解压出来的目录）**
 

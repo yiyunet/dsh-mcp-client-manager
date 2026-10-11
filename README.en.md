@@ -6,8 +6,8 @@ A DSH plugin adding an **MCP Client** panel under **Settings → sidebar**: list
 and remove the MCP server rows mounted under `@deepseek-ai/dsh-mcp-client` —
 **nothing is written until you press save, and nothing requires a host restart**.
 
-> Written for the author's own daily use first (`package.json` still says `private: true`, **not published to npm**).
-> Source is public under MIT — take what you need. Capabilities and limits are stated below; **nothing outside this document is promised**.
+> Written for the author's own daily use first; now published to npm ([`@yiyunet/dsh-mcp-client-manager`](https://www.npmjs.com/package/@yiyunet/dsh-mcp-client-manager)).
+> Source is public under MIT. Capabilities and limits are stated below; **nothing outside this document is promised**.
 
 ## Changelog
 
@@ -61,6 +61,8 @@ The plugin's own layer avoids parsing (we only ever write what we generated) and
 6. **No protocol-level probing**: the status column is row phase + tool count (`mcp__<serverName>__*`); it is **not** a health check (while reconnecting, tools are still listed and only the call fails — documented `mcp-client` behaviour).
 
 ## 3. Install
+
+> **Published to npm (easiest)**: `dsh plugin --profile web add @yiyunet/dsh-mcp-client-manager` — or pick one of the options below.
 
 **Option A · local directory (recommended)**
 
