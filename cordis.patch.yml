@@ -1,0 +1,11 @@
+# @yiyunet/dsh-mcp-client-manager —— profile 组合层
+#
+# 只做一条 insert：把本插件挂到宿主平面。
+# ⚠️ `name` 必须**恰为包名**：dsh-client-modules 只把一个包的浏览器半侧挂在
+#    「说明符恰为包名」的那一行 Loader 行上（否则设置面板不会出现）。
+#
+# 本插件自身不声明任何 MCP 行：受管 MCP 行由面板写入机器级自有层
+# $DSH_HOME/cordis.patch.yml；手写行（如有）仍在 profiles/<profile>/cordis.patch.yml 中不受影响。
+- insert:
+    - id: mcp-client-manager
+      name: '@yiyunet/dsh-mcp-client-manager'

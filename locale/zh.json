@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MCP 客户端管理器",
+    "description": "在设置面板里列出/添加/改写/启停 MCP 行；受管行写入 $DSH_HOME/cordis.patch.yml。"
+  }
+}

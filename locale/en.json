@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MCP Client Manager",
+    "description": "List, add, rewrite and toggle MCP rows in the settings panel; managed rows are written to $DSH_HOME/cordis.patch.yml."
+  }
+}

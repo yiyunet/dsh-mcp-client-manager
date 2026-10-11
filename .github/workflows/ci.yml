@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check:
+    name: Test and verify package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ⚠️ 刻意**不**写 `cache: npm`：本包零依赖、无 package-lock.json，
+      #    setup-node 的缓存开关在找不到 lock 时会直接失败。
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # ① 语法预检：零副作用，几秒钟，能拦住任何手写笔误。
+      - name: Syntax precheck
+        run: |
+          node --check plugin-src/host/index.mjs
+          node --check plugin-src/host/store.mjs
+          node --check plugin-src/host/validate.mjs
+          node --check plugin-src/host/adapter.mjs
+          node --check plugin-src/client/client.js
+
+      # ② 测试：纯函数单测 + 假宿主集成冒烟（不需要 DSH、不需要网络）。
+      #    刻意**不**写 `node --test test`：Node 24 会把 `test` 当模块加载并报 MODULE_NOT_FOUND。
+      - name: Tests
+        run: node --test test/validate.test.mjs test/store.test.mjs test/host-smoke.mjs
+
+      # ③ 包契约断言：包名三处一致 / RPC 端点一致 / exports 可达 / files 白名单自洽 /
+      #    无安装期脚本 / 零运行依赖 / 双语 locale 键一致 / 版本三处一致。
+      - name: Package contract assertions
+        run: node scripts/verify-package.mjs

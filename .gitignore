@@ -1,0 +1,24 @@
+# 本包零构建、零运行依赖：没有 lib/ 产物，源码即产物（plugin-src/）。
+
+# 依赖
+node_modules/
+
+# npm pack 产物：一次性自检用，绝不入库（文件名带版本号，每次 pack 都会新增一个）
+*.tgz
+
+# 本机运行产物（绝不入库）
+.dsh/
+*.log
+
+# 本地私有配置（凭证、个人覆盖）——如你本地另存了 patch 覆盖文件
+cordis.patch.local.yml
+.env
+.env.*
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
