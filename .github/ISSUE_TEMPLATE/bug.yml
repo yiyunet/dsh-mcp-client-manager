@@ -1,0 +1,59 @@
+name: 报告问题 / Bug report
+description: 插件出错、不工作，或者和说明不一致 / Something is broken or not working as described
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 谢谢反馈！中文、英文都行。/ Thanks for the report! Chinese or English is fine.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么 / What happened
+      description: 你做了什么、看到了什么、本来应该怎样 / What you did, what you saw, what you expected
+    validations:
+      required: true
+
+  # 「装了但没生效」和「写盘写坏了」是两条完全不同的排查线：
+  # 前者看生效链，后者看回滚与两层文件。先分清楚能省一轮来回。
+  - type: dropdown
+    id: where
+    attributes:
+      label: 哪一段 / Which part
+      description: 不确定就留空 / Leave blank if unsure
+      multiple: false
+      options:
+        - 添加 / 接入 MCP 服务器（写不进配置）
+        - 装了但没生效（工具列表里看不到）
+        - 设置面板显示不对
+        - 工具调用报错或结果不对
+        - 回滚 / 撤销覆盖
+        - 与既有配置冲突（我原来手改过配置）
+        - 不算某一项（文档、其他）/ other
+
+  - type: input
+    id: versions
+    attributes:
+      label: 版本 / Versions
+      description: DSH 版本和插件版本，DSH 侧栏的插件页能看到 / DSH and plugin versions, shown on the DSH Plugins page
+      placeholder: DSH 0.2.1-rc.1, plugin 1.0.4
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: 系统 / OS
+      placeholder: Windows 11
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图或配置片段 / Screenshots or config snippets
+      description: |
+        可选。**贴之前先删掉 MCP 服务器配置里的 token、API key 与内网地址** ——
+        这类配置天然带凭证，是公开 issue 里最常见的一处手滑。
+        / Optional. **Remove tokens, API keys and internal hostnames from MCP server configs first** —
+        these configs carry credentials by nature and are the most common slip in public issues.

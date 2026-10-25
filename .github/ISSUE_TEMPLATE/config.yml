@@ -1,0 +1,13 @@
+# 新 issue 的入口页：两条「你可能先想看一眼」的指路 ＋ 允许开空白 issue。
+#
+# 为什么留 `blank_issues_enabled: true`：模板是**帮忙**，不是门槛。
+# 强制所有反馈都填表，只会把「用法问一句」的人挡在门外，或者逼他硬填一个 bug 模板。
+blank_issues_enabled: true
+
+contact_links:
+  - name: 装了没生效，先看 README「4. 生效与验证」
+    url: https://github.com/yiyunet/dsh-mcp-client-manager#readme
+    about: 它怎么工作、安全口径、安装、生效与验证、回滚、已知边界 —— 都在 README 里 / How it works, security model, install, verification, rollback, known limits
+  - name: yiyunet 的其他 DSH 插件 / More DSH plugins
+    url: https://github.com/yiyunet
+    about: 学习插件、钉钉连接、文档体检、出口代理 / Learning, DingTalk, doc audit, egress proxy

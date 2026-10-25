@@ -168,6 +168,17 @@ Remove-Item -Recurse "$env:USERPROFILE\.dsh\mcp-manager"
 - No build step and no runtime dependencies: the host half uses only `node:*` plus ctx services, the browser half uses the
   official module-loader factory format.
 
-## 7. License
+## 7. Feedback
+
+Found a problem or want a new feature? [Open an issue](https://github.com/yiyunet/dsh-mcp-client-manager/issues/new/choose).
+Include the **DSH version** and the **plugin version** — that makes a fix much faster.
+
+The template asks which part broke: "installed but not taking effect" and "config got written wrong"
+are two entirely different troubleshooting paths, so report them separately when you can.
+
+**Remove tokens, API keys and internal hostnames before pasting config** — MCP server configs carry
+credentials by nature.
+
+## 8. License
 
 MIT — see [LICENSE](LICENSE). Questions and bug reports: open an issue in this repository.

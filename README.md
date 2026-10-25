@@ -191,7 +191,19 @@ Remove-Item -Recurse "$env:USERPROFILE\.dsh\mcp-manager"
 
 ---
 
-## 7. 文档与许可
+## 7. 反馈
+
+遇到问题或想要新功能，[提一个 issue](https://github.com/yiyunet/dsh-mcp-client-manager/issues/new/choose)。
+报问题时写上 **DSH 版本**和**插件版本**，修起来最快。
+
+模板会问「哪一段」——若说不清，留空即可，但**「装了没生效」与「配置被写坏」是两条完全不同的排查线**，
+能分清就分开报。
+
+**贴配置片段前请先删掉 token、API key 与内网地址**：MCP 服务器的配置天然带凭证。
+
+---
+
+## 8. 文档与许可
 
 | 你想知道… | 看这里 |
 |---|---|
